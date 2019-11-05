@@ -46,13 +46,22 @@ Now we get our example data matrix.  This data matrix should the following
 
 This data matrix should contain all of the genes in the list above.  
 
-IMPORTANT NOTE FOR MICROARRAYS:  For Microarray expression data, we urge some caution in use given that relative probe expression between genes is not always proportion to the relative biological expression given probe effects.   In the past we simply average across probes belonging to the same gene prior to use in the classifier.  For those reasons we recommend RNA-seq or nanostring for classifier use, however we have seen good performance in prior microarray datasets. 
+## IMPORTANT NOTE FOR MICROARRAYS  
 
-IMPORTANT NOTE FOR RNA-seq:  If using RNA-seq data, using TPM (transcripts per million) measurements is necessary to compare relative expression per gene.  IF not available, FPKM (fragments per kilobase per million) data is sufficient.  Both these measurements are available from common expression quantitation pipelines such as Salmon. Do not use raw counts or expected read counts.  
+For Microarray expression data, we urge some caution in use given that relative probe expression between genes is not always proportion to the relative biological expression given probe effects.   In the past we simply average across probes belonging to the same gene prior to use in the classifier.  For those reasons we recommend RNA-seq or nanostring for classifier use, however we have seen good performance in prior microarray datasets. 
 
-IMPORTANT NOTE FOR NANOSTRING:  For nanostring data, we have found that utilizing the usual raw transcript counts provided from common software is sufficient for use. 
+## IMPORTANT NOTE FOR RNA-seq  
+
+If using RNA-seq data, using TPM (transcripts per million) measurements is necessary to compare relative expression per gene.  IF not available, FPKM (fragments per kilobase per million) data is sufficient.  Both these measurements are available from common expression quantitation pipelines such as Salmon. Do not use raw counts or expected read counts.  
+
+## IMPORTANT NOTE FOR NANOSTRING  
+
+For nanostring data, we have found that utilizing the usual raw transcript counts provided from common software is sufficient for use. 
+
 
 In general, between-sample normalization is not necessary for our method, as we utilize a rank based approach to generate the predictors for our prediction model.  
+
+## Load data and apply classifier
 
 Now lets load the example data matrix. 
 
@@ -70,6 +79,8 @@ source("functions.R")
 # apply classifier
 predictions = apply_classifier(data = dat, classifier = classifier)
 ```
+
+## Interpreting output 
 
 The predictions object above contains a n by 3 data frame, where the 1st column is the predicted probability of each sample  of belonging to the "basal-like" subtype.  The second column is the subtype call based on a predicted probability cutoff of 0.5.  Great than 0.5 indicates the basal-like subtype, and less than 0.5 indicated the classical subtype.  The third column is a graded subtype call similar to the PurIST manuscript, indicating the confidence of the call (Strong, Likely, Lean).  We have preliminary evidence that the strength of the call may actually reflect the underlying mixture of basal and classical cells in the tumor itself.  
 
