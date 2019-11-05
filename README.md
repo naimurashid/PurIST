@@ -5,8 +5,9 @@ output:
 ---
 # PurIST
 
-Here we provide an example dataset and walkthrough to performing predictions in R.
+Here we provide an example dataset and walkthrough to performing predictions in R.  You can jump to the end of the document to copy the whole code block needed to run this example. 
 
+# Walkthrough
 First load the purist classifier object.
 
 ```R
@@ -88,6 +89,8 @@ Sample_8      0.205301579  classical  Likely  Classical
 Sample_9      0.205301579  classical  Likely  Classical
 Sample_10     0.991222760 basal-like Likely  Basal-like
 ```
+
+# Summary
 
 Putting it all together, once can use the following set of commands in R to generate the above
 

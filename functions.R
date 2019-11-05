@@ -43,7 +43,7 @@ apply_classifier = function(data, classifier){
   Subtype_graded[Pred_prob_basal > .9 ] = 5
   
   # graded categories
-  grades = c("Strong Classical","Likely Classical","Lean Classical","Lean Basal-like","Likely Basal-like", "Strong Basal-like")
+  grades = c("strong classical","likely classical","lean classical","lean basal-like","likely basal-like", "strong basal-like")
   Subtype_graded = grades[Subtype_graded]
   
   # final matrix
