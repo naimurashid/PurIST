@@ -1,7 +1,7 @@
 ---
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 # PurIST
 
@@ -46,15 +46,15 @@ Now we get our example data matrix.  This data matrix should the following
 
 This data matrix should contain all of the genes in the list above.  
 
-## IMPORTANT NOTE FOR MICROARRAYS  
+### IMPORTANT NOTE FOR MICROARRAYS  
 
 For Microarray expression data, we urge some caution in use given that relative probe expression between genes is not always proportion to the relative biological expression given probe effects.   In the past we simply average across probes belonging to the same gene prior to use in the classifier.  For those reasons we recommend RNA-seq or nanostring for classifier use, however we have seen good performance in prior microarray datasets. 
 
-## IMPORTANT NOTE FOR RNA-seq  
+### IMPORTANT NOTE FOR RNA-seq  
 
 If using RNA-seq data, using TPM (transcripts per million) measurements is necessary to compare relative expression per gene.  IF not available, FPKM (fragments per kilobase per million) data is sufficient.  Both these measurements are available from common expression quantitation pipelines such as Salmon. Do not use raw counts or expected read counts.  
 
-## IMPORTANT NOTE FOR NANOSTRING  
+### IMPORTANT NOTE FOR NANOSTRING  
 
 For nanostring data, we have found that utilizing the usual raw transcript counts provided from common software is sufficient for use. 
 
