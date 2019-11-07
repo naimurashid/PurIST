@@ -52,7 +52,7 @@ For Microarray expression data, we urge some caution in use given that relative 
 
 ### IMPORTANT NOTE FOR RNA-seq  
 
-If using RNA-seq data, using TPM (transcripts per million) measurements is necessary to compare relative expression per gene.  IF not available, FPKM (fragments per kilobase per million) data is sufficient.  Both these measurements are available from common expression quantitation pipelines such as Salmon. Do not use raw counts or expected read counts.  
+If using RNA-seq data, using TPM (transcripts per million) measurements is necessary to compare relative expression per gene.  If not available, FPKM (fragments per kilobase per million) data is sufficient.  Both these measurements are available from common expression quantitation pipelines such as Salmon. Do not use raw counts or expected read counts.  
 
 ### IMPORTANT NOTE FOR NANOSTRING  
 
@@ -82,7 +82,7 @@ predictions = apply_classifier(data = dat, classifier = classifier)
 
 ## Interpreting output 
 
-The predictions object above contains a n by 3 data frame, where the 1st column is the predicted probability of each sample  of belonging to the "basal-like" subtype.  The second column is the subtype call based on a predicted probability cutoff of 0.5.  Great than 0.5 indicates the basal-like subtype, and less than 0.5 indicated the classical subtype.  The third column is a graded subtype call similar to the PurIST manuscript, indicating the confidence of the call (Strong, Likely, Lean).  We have preliminary evidence that the strength of the call may actually reflect the underlying mixture of basal and classical cells in the tumor itself.  
+The predictions object above contains a n by 3 data frame, where the 1st column is the predicted probability of each sample  of belonging to the "basal-like" subtype.  The second column is the subtype call based on a predicted probability cutoff of 0.5.  Greater than 0.5 indicates the basal-like subtype, and less than 0.5 indicated the classical subtype.  The third column is a graded subtype call similar to the PurIST manuscript, indicating the confidence of the call (Strong, Likely, Lean).  We have preliminary evidence that the strength of the call may actually reflect the underlying mixture of basal and classical cells in the tumor itself.  
 
 The output generated from our example data is given below ('predictions' object).  
 
