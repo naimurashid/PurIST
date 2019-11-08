@@ -88,17 +88,17 @@ The output generated from our example data is given below ('predictions' object)
 
 
 ```R
-          Pred_prob_basal    Subtype     Subtype_graded
-Sample_1      0.936765062 basal-like Likely  Basal-like
-Sample_2      0.991222760 basal-like Likely  Basal-like
-Sample_3      0.002768882  classical   Strong Classical
-Sample_4      0.991222760 basal-like Likely  Basal-like
-Sample_5      0.092112770  classical   Strong Classical
-Sample_6      0.019727002  classical   Strong Classical
-Sample_7      0.001095705  classical   Strong Classical
-Sample_8      0.205301579  classical  Likely  Classical
-Sample_9      0.205301579  classical  Likely  Classical
-Sample_10     0.991222760 basal-like Likely  Basal-like
+          Pred_prob_basal    Subtype    Subtype_graded
+Sample_1      0.936765062 basal-like strong basal-like
+Sample_2      0.991222760 basal-like strong basal-like
+Sample_3      0.002768882  classical  strong classical
+Sample_4      0.991222760 basal-like strong basal-like
+Sample_5      0.092112770  classical  strong classical
+Sample_6      0.019727002  classical  strong classical
+Sample_7      0.001095705  classical  strong classical
+Sample_8      0.205301579  classical  likely classical
+Sample_9      0.205301579  classical  likely classical
+Sample_10     0.991222760 basal-like strong basal-like
 ```
 
 # Summary
