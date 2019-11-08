@@ -48,7 +48,7 @@ This data matrix should contain all of the genes in the list above.
 
 ### IMPORTANT NOTE FOR MICROARRAYS  
 
-For Microarray expression data, we urge some caution in use given that relative probe expression between genes is not always proportion to the relative biological expression given probe effects.   In the past we simply average across probes belonging to the same gene prior to use in the classifier.  For those reasons we recommend RNA-seq or nanostring for classifier use, however we have seen good performance in prior microarray datasets. 
+For Microarray expression data, we urge some caution in use given that relative probe expression between genes is not always proportional to the relative biological expression given probe effects.   For those reasons we recommend RNA-seq or nanostring for classifier use, however we have seen good performance in prior microarray datasets.   In the past we have simply averaged across probes belonging to the same gene prior to use in the classifier.  
 
 ### IMPORTANT NOTE FOR RNA-seq  
 
