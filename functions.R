@@ -38,9 +38,10 @@ apply_classifier = function(data, classifier){
   Subtype_graded = rep(1, length(Pred_prob_basal))
   Subtype_graded[Pred_prob_basal < .1] = 1
   Subtype_graded[Pred_prob_basal > .1 & Pred_prob_basal < .4] = 2
-  Subtype_graded[Pred_prob_basal > .4 & Pred_prob_basal < .6] = 3
-  Subtype_graded[Pred_prob_basal > .6 & Pred_prob_basal < .9] = 4
-  Subtype_graded[Pred_prob_basal > .9 ] = 5
+  Subtype_graded[Pred_prob_basal > .4 & Pred_prob_basal < .5] = 3
+  Subtype_graded[Pred_prob_basal > .5 & Pred_prob_basal < .6] = 4
+  Subtype_graded[Pred_prob_basal > .6 & Pred_prob_basal < .9] = 5
+  Subtype_graded[Pred_prob_basal > .9 ] = 6
   
   # graded categories
   grades = c("strong classical","likely classical","lean classical","lean basal-like","likely basal-like", "strong basal-like")
