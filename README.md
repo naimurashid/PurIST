@@ -7,6 +7,8 @@ output:
 
 Here we provide an example dataset and walkthrough to performing predictions in R.  You can jump to the end of the document to copy the whole code block needed to run this example. 
 
+Disclaimer:  PurIST is patent pending and access/use is for not-for-profit research only.
+
 # Walkthrough
 First load the purist classifier object.
 
