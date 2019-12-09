@@ -49,7 +49,7 @@ apply_classifier = function(data, classifier){
   
   # final matrix
   final = data.frame(Pred_prob_basal= Pred_prob_basal, Subtype = Subtype, Subtype_graded = Subtype_graded)
-  rownames(final) = make.names(colnames(dat), unique = T)
+  rownames(final) = make.names(colnames(data), unique = any(table(colnames(data)) > 1) )
   
   return(final)
 }
