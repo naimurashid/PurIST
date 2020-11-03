@@ -48,20 +48,28 @@ Now we get our example data matrix.  This data matrix should the following
 
 This data matrix should contain all of the genes in the list above.  
 
+In general, between-sample normalization is not necessary for our method, as we utilize a rank based approach to generate the predictors for our prediction model.  
+
+
 ### IMPORTANT NOTE FOR MICROARRAYS  
 
 For Microarray expression data, we urge some caution in use given that relative probe expression between genes is not always proportional to the relative biological expression given probe effects.   For those reasons we recommend RNA-seq or nanostring for classifier use, however we have seen good performance in prior microarray datasets.   In the past we have simply averaged across probes belonging to the same gene prior to use in the classifier.  
 
+DO NOT row normalize (standardize within gene to mean 0 variance 1).  This will introduce artifacts into the prediction.  
+
 ### IMPORTANT NOTE FOR RNA-seq  
 
-If using RNA-seq data, using TPM (transcripts per million) measurements is necessary to compare relative expression per gene.  If not available, FPKM (fragments per kilobase per million) data is sufficient.  Both these measurements are available from common expression quantitation pipelines such as Salmon. Do not use raw counts or expected read counts.  
+If using RNA-seq data, using TPM (transcripts per million) measurements is necessary to compare relative expression per gene.  If not available, FPKM (fragments per kilobase per million) data is sufficient.  Both these measurements are available from common expression quantitation pipelines such as Salmon. 
+
+DO NOT use raw counts or expected read counts.  
+
+DO NOT row normalize expression.  For example, DO NOT standardize within gene expression to mean 0 variance 1 across samples.  This will introduce artifacts into the prediction.  
 
 ### IMPORTANT NOTE FOR NANOSTRING  
 
-For nanostring data, we have found that utilizing the usual raw transcript counts provided from common software is sufficient for use. 
+For nanostring data, we have found that utilizing the usual raw transcript counts provided from common software is sufficient for use. D
 
-
-In general, between-sample normalization is not necessary for our method, as we utilize a rank based approach to generate the predictors for our prediction model.  
+DO NOT row normalize expression.  For example, DO NOT standardize within gene expression to mean 0 variance 1 across samples.  This will introduce artifacts into the prediction.  
 
 ## Load data and apply classifier
 
